@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="pt-AO"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Para profissionais · KASAKA</title><meta name="description" content="Receba pedidos perto de si e proponha o seu preço na KASAKA.">
+<meta property="og:title" content="Para profissionais · KASAKA"><meta property="og:description" content="Receba pedidos perto de si e proponha o seu preço na KASAKA."><meta property="og:image" content="kasaka_logo.png">
+<meta name="theme-color" content="#0B2545">
+<link rel="icon" href="kasaka_logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0B2545;--deep:#071A31;--teal:#1C7293;--mint:#3E9C82;--gold:#D9A62E;--coral:#E0654A;--paper:#F2F6F4;--ink:#10202F;--muted:#55677A;--line:#D6E0E0}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 "Figtree",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.disp{font-family:"Bricolage Grotesque","Figtree",system-ui,sans-serif;letter-spacing:-.02em;line-height:1.05;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* nav */
+.top{position:sticky;top:0;z-index:20;background:rgba(7,26,49,.94);backdrop-filter:blur(8px);color:#fff}
+.top .wrap{display:flex;align-items:center;gap:26px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:19px;letter-spacing:.14em;margin-right:auto}
+.brand img{width:30px;height:30px}
+.top a.l{text-decoration:none;font-size:15px;color:#C9D8E6}
+.top a.l:hover{color:#fff}
+.pill{display:inline-block;text-decoration:none;font-weight:700;font-size:15px;padding:11px 20px;border-radius:999px;background:var(--gold);color:var(--deep);border:0;cursor:pointer;font-family:inherit}
+.pill:hover{background:#E6B842}
+.pill.out{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.4)}
+.pill.out:hover{box-shadow:inset 0 0 0 2px #fff;background:transparent}
+.pill.dim{background:rgba(255,255,255,.12);color:#DCE7F1;cursor:default}
+
+/* hero */
+.hero{background:var(--navy);color:#fff;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding-top:72px;padding-bottom:84px}
+.hero h1{font-size:clamp(40px,5.4vw,68px);font-weight:800}
+.hero p.sub{font-size:19px;color:#BFD0E0;max-width:34em;margin:24px 0 32px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.note{margin-top:18px;font-size:14px;color:#8FA6BD}
+
+/* demo */
+.demo{background:#fff;color:var(--ink);border-radius:26px;padding:22px;box-shadow:0 30px 60px -20px rgba(0,0,0,.55);max-width:440px;margin-left:auto;width:100%}
+.demo .cap{font-size:13px;color:var(--muted);margin:0 0 8px}
+.req{background:var(--paper);border-radius:16px;padding:14px 16px;min-height:78px;font-size:16px;line-height:1.45}
+.caret{display:inline-block;width:2px;height:1.1em;background:var(--teal);vertical-align:-.15em;margin-left:2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.offers{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:10px}
+.offers li{display:grid;grid-template-columns:42px 1fr auto;gap:12px;align-items:center;padding:10px 12px;border-radius:16px;border:2px solid var(--line);opacity:0;transform:translateY(10px);transition:opacity .4s,transform .4s,border-color .3s,background .3s}
+.offers li.in{opacity:1;transform:none}
+.offers li.win{border-color:var(--mint);background:#EAF6F1}
+.av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700;font-size:14px}
+.offers b{display:block;font-size:15px;line-height:1.2}
+.offers small{color:var(--muted);font-size:13px}
+.price{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:19px;color:var(--teal);white-space:nowrap}
+.pick{margin-top:14px;min-height:46px;font-size:14px;color:var(--muted);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.pick strong{color:var(--mint)}
+.replay{white-space:nowrap;background:none;border:0;color:var(--teal);font:inherit;font-size:14px;font-weight:600;cursor:pointer;text-decoration:underline;padding:4px}
+
+/* sections */
+section{padding:92px 0}
+h2{font-size:clamp(32px,4.4vw,52px);font-weight:800;max-width:15em}
+.lead{color:var(--muted);font-size:19px;max-width:36em;margin:18px 0 0}
+
+/* steps: a real sequence */
+.steps{list-style:none;margin:56px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:s}
+.steps li{position:relative;padding:34px 22px 0 0;border-top:3px solid var(--navy)}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;top:-19px;left:0;width:35px;height:35px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:16px}
+.steps li:nth-child(2){border-color:var(--teal)}.steps li:nth-child(2)::before{background:var(--teal)}
+.steps li:nth-child(3){border-color:var(--mint)}.steps li:nth-child(3)::before{background:var(--mint)}
+.steps li:nth-child(4){border-color:var(--gold)}.steps li:nth-child(4)::before{background:var(--gold);color:var(--deep)}
+.steps h3{font-size:24px;margin:0 0 8px}
+.steps p{margin:0;color:var(--muted);font-size:16px}
+
+/* categories: solid tiles like the app */
+.cats{background:var(--deep);color:#fff}
+.cats h2{color:#fff}
+.cats .lead{color:#9FB4C9}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:48px}
+.tile{border-radius:22px;padding:22px 20px 22px;color:#fff;min-height:210px;display:flex;flex-direction:column;justify-content:space-between}
+.tile svg{width:44px;height:44px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tile h3{font-size:25px;margin:18px 0 6px}
+.tile p{margin:0;font-size:14.5px;line-height:1.45;opacity:.92}
+.tile.gold{color:var(--deep)}
+.tile:last-child{grid-column:span 2}
+
+/* reasons as ruled list */
+.why dl{margin:48px 0 0;display:grid;grid-template-columns:1fr 1fr;column-gap:64px}
+.why .row{display:grid;grid-template-columns:200px 1fr;gap:20px;padding:22px 0;border-top:1px solid var(--line)}
+.why dt{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:20px;line-height:1.2}
+.why dd{margin:0;color:var(--muted);font-size:16px}
+
+/* faq */
+.faq{background:#E7EFEC}
+.faq details{border-top:1px solid #C3D2CF;padding:0}
+.faq details:last-of-type{border-bottom:1px solid #C3D2CF}
+.faq summary{list-style:none;cursor:pointer;padding:22px 0;font-weight:700;font-size:19px;display:flex;justify-content:space-between;gap:16px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:28px;line-height:1;color:var(--teal);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin:0 0 22px;color:var(--muted);max-width:44em}
+.faqbox{max-width:780px;margin-top:40px}
+
+/* cta */
+.cta{background:var(--gold);color:var(--deep)}
+.cta .wrap{display:flex;flex-wrap:wrap;gap:28px;align-items:center;justify-content:space-between}
+.cta h2{max-width:11em}
+.cta p{margin:14px 0 0;font-size:18px;max-width:30em}
+.cta .pill{background:var(--deep);color:#fff;font-size:17px;padding:16px 28px}
+.cta .pill:hover{background:#0B2545}
+
+/* pros page */
+.calc{background:#fff;color:var(--ink);border-radius:26px;padding:26px;max-width:440px;margin-left:auto;width:100%;box-shadow:0 30px 60px -20px rgba(0,0,0,.55)}
+.calc label{font-size:14px;color:var(--muted);display:block;margin-bottom:8px}
+.calc .field{display:flex;align-items:center;border:2px solid var(--line);border-radius:16px;padding:0 16px;background:var(--paper)}
+.calc .field:focus-within{border-color:var(--teal)}
+.calc input{border:0;background:transparent;font:800 34px "Bricolage Grotesque",sans-serif;width:100%;padding:14px 0;color:var(--ink);outline:none;min-width:0}
+.calc .kz{font-weight:700;color:var(--muted)}
+.calc table{width:100%;border-collapse:collapse;margin-top:18px;font-size:16px}
+.calc td{padding:10px 0;border-bottom:1px solid var(--line)}
+.calc td:last-child{text-align:right;font-weight:700}
+.calc tr.net td{border-bottom:0;font-family:"Bricolage Grotesque",sans-serif;font-size:24px;color:var(--mint);padding-top:16px}
+.calc .fine{font-size:13px;color:var(--muted);margin:12px 0 0}
+.gains{list-style:none;margin:40px 0 0;padding:0;display:grid;gap:0}
+.gains li{padding:18px 0 18px 40px;border-top:1px solid var(--line);position:relative;font-size:18px}
+.gains li::before{content:"";position:absolute;left:4px;top:25px;width:16px;height:9px;border-left:3px solid var(--mint);border-bottom:3px solid var(--mint);transform:rotate(-45deg)}
+
+footer{background:var(--deep);color:#9FB4C9;padding:44px 0;font-size:14.5px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:20px 40px;justify-content:space-between}
+footer a{color:#DCE7F1}
+
+@media (max-width:900px){
+ .hero .wrap{grid-template-columns:1fr;gap:44px;padding-top:48px;padding-bottom:56px}
+ .demo,.calc{margin:0;max-width:none}
+ .steps{grid-template-columns:1fr 1fr;row-gap:44px}
+ .tiles{grid-template-columns:1fr 1fr}
+ .tile:last-child{grid-column:span 2}
+ .why dl{grid-template-columns:1fr}
+ section{padding:68px 0}
+ .top .hide{display:none}
+}
+@media (max-width:560px){
+ .wrap{padding:0 18px}
+ .steps{grid-template-columns:1fr}
+ .tiles{grid-template-columns:1fr}
+ .tile:last-child{grid-column:auto}
+ .tile{min-height:0}
+ .why .row{grid-template-columns:1fr;gap:6px}
+ .top .wrap{gap:14px}
+ .hero p.sub{font-size:17px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style></head><body>
+<nav class="top"><div class="wrap"><a class="brand" href="index.html"><img src="kasaka_logo.png" alt="">KASAKA</a>
+<a class="l hide" href="index.html#como-funciona">Como funciona</a>
+<a class="l hide" href="index.html#categorias">Categorias</a>
+<a class="l hide" href="index.html#perguntas">Perguntas</a>
+<a class="pill" href="profissionais.html">Sou profissional</a></div></nav>
+<header class="hero"><div class="wrap">
+<div>
+<h1>Mais clientes. O preço é você que define.</h1>
+<p class="sub">Receba pedidos de clientes perto de si e envie a sua oferta. Você decide quanto cobra e quando está disponível.</p>
+<div class="btns"><span class="pill dim">App em breve na Google Play</span></div>
+<p class="note">Sem mensalidade nem custo de inscrição.</p>
+</div>
+<div class="calc">
+<label for="preco">O seu preço para um pedido</label>
+<div class="field"><input id="preco" inputmode="numeric" value="10000" autocomplete="off"><span class="kz">Kz</span></div>
+<table>
+<tr><td>Preço que o cliente paga</td><td id="pv"></td></tr>
+<tr><td>Comissão KASAKA (20%)</td><td id="fee"></td></tr>
+<tr class="net"><td>Você recebe</td><td id="net"></td></tr>
+</table>
+<p class="fine">A comissão só é paga sobre serviços concluídos. A app mostra este cálculo antes de enviar cada oferta.</p>
+</div>
+</div></header>
+
+<section><div class="wrap">
+<h2>O que ganha ao trabalhar com a KASAKA</h2>
+<ul class="gains">
+<li>Pedidos da sua categoria, até 10 km de si, só quando está disponível.</li>
+<li>Define o seu preço em cada pedido, com o valor líquido calculado antes de enviar.</li>
+<li>Selo de profissional verificado, que dá confiança aos clientes.</li>
+<li>Avaliações que constroem a sua reputação.</li>
+</ul></div></section>
+
+<section class="cats"><div class="wrap">
+<h2>Como começar</h2>
+<p class="lead">Quatro passos até ao primeiro pedido.</p>
+<ol class="steps" style="color:#fff">
+<li><h3>Crie a conta</h3><p style="color:#9FB4C9">Com o seu email ou número de telemóvel.</p></li>
+<li><h3>Candidate-se</h3><p style="color:#9FB4C9">Escolha a categoria e descreva a sua experiência.</p></li>
+<li><h3>Verifique a identidade</h3><p style="color:#9FB4C9">BI angolano ou passaporte e uma selfie tirada no momento.</p></li>
+<li><h3>Receba pedidos</h3><p style="color:#9FB4C9">Fique disponível e envie as suas ofertas.</p></li>
+</ol></div></section>
+
+<section class="faq"><div class="wrap">
+<h2>Perguntas de profissionais</h2>
+<div class="faqbox">
+<details><summary>Que documentos preciso?</summary><p>BI angolano ou passaporte (para estrangeiros) e uma selfie tirada na altura. Os documentos ficam guardados de forma privada e só servem para a verificação.</p></details>
+<details><summary>Como recebo o pagamento?</summary><p>Por agora, em dinheiro, diretamente do cliente. A KASAKA regista os valores e acerta a comissão de 20% consigo.</p></details>
+<details><summary>Tenho de estar sempre disponível?</summary><p>Não. Só recebe pedidos quando se marca como disponível.</p></details>
+<details><summary>A app usa a minha localização?</summary><p>Sim, para saber que pedidos estão perto de si e para o cliente acompanhar a sua chegada. Durante um serviço aceite, o cliente vê a sua posição a caminho. Pode gerir a permissão no telemóvel.</p></details>
+</div></div></section>
+<footer><div class="wrap"><div><strong style="color:#fff">KASAKA</strong><br>KASAKA GROUP, SU, Lda. · Angola<br>Contacto: <a href="mailto:info@kasakaapp.net">info@kasakaapp.net</a></div>
+<div><a href="privacidade.html">Privacidade</a> &nbsp; <a href="termos.html">Termos</a> &nbsp; <a href="eliminar-conta.html">Eliminar conta</a></div></div></footer>
+<script>
+(function(){
+ var fmt=function(n){return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,".")};
+ var inp=document.getElementById("preco"),fee=document.getElementById("fee"),net=document.getElementById("net"),price=document.getElementById("pv");
+ function upd(){
+  var v=parseInt((inp.value||"").replace(/\D/g,""),10)||0;
+  price.textContent=fmt(v)+" Kz";fee.textContent="− "+fmt(v*0.2)+" Kz";net.textContent=fmt(v*0.8)+" Kz";
+ }
+ inp.addEventListener("input",upd);upd();
+})();
+</script></body></html>

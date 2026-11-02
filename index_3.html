@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="pt-AO"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KASAKA · Diga o que precisa, escolha quem o faz</title><meta name="description" content="A KASAKA liga clientes a profissionais verificados em Angola. Descreva o serviço, receba ofertas e escolha.">
+<meta property="og:title" content="KASAKA · Diga o que precisa, escolha quem o faz"><meta property="og:description" content="A KASAKA liga clientes a profissionais verificados em Angola. Descreva o serviço, receba ofertas e escolha."><meta property="og:image" content="kasaka_logo.png">
+<meta name="theme-color" content="#0B2545">
+<link rel="icon" href="kasaka_logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0B2545;--deep:#071A31;--teal:#1C7293;--mint:#3E9C82;--gold:#D9A62E;--coral:#E0654A;--paper:#F2F6F4;--ink:#10202F;--muted:#55677A;--line:#D6E0E0}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 "Figtree",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.disp{font-family:"Bricolage Grotesque","Figtree",system-ui,sans-serif;letter-spacing:-.02em;line-height:1.05;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* nav */
+.top{position:sticky;top:0;z-index:20;background:rgba(7,26,49,.94);backdrop-filter:blur(8px);color:#fff}
+.top .wrap{display:flex;align-items:center;gap:26px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:19px;letter-spacing:.14em;margin-right:auto}
+.brand img{width:30px;height:30px}
+.top a.l{text-decoration:none;font-size:15px;color:#C9D8E6}
+.top a.l:hover{color:#fff}
+.pill{display:inline-block;text-decoration:none;font-weight:700;font-size:15px;padding:11px 20px;border-radius:999px;background:var(--gold);color:var(--deep);border:0;cursor:pointer;font-family:inherit}
+.pill:hover{background:#E6B842}
+.pill.out{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.4)}
+.pill.out:hover{box-shadow:inset 0 0 0 2px #fff;background:transparent}
+.pill.dim{background:rgba(255,255,255,.12);color:#DCE7F1;cursor:default}
+
+/* hero */
+.hero{background:var(--navy);color:#fff;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding-top:72px;padding-bottom:84px}
+.hero h1{font-size:clamp(40px,5.4vw,68px);font-weight:800}
+.hero p.sub{font-size:19px;color:#BFD0E0;max-width:34em;margin:24px 0 32px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.note{margin-top:18px;font-size:14px;color:#8FA6BD}
+
+/* demo */
+.demo{background:#fff;color:var(--ink);border-radius:26px;padding:22px;box-shadow:0 30px 60px -20px rgba(0,0,0,.55);max-width:440px;margin-left:auto;width:100%}
+.demo .cap{font-size:13px;color:var(--muted);margin:0 0 8px}
+.req{background:var(--paper);border-radius:16px;padding:14px 16px;min-height:78px;font-size:16px;line-height:1.45}
+.caret{display:inline-block;width:2px;height:1.1em;background:var(--teal);vertical-align:-.15em;margin-left:2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.offers{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:10px}
+.offers li{display:grid;grid-template-columns:42px 1fr auto;gap:12px;align-items:center;padding:10px 12px;border-radius:16px;border:2px solid var(--line);opacity:0;transform:translateY(10px);transition:opacity .4s,transform .4s,border-color .3s,background .3s}
+.offers li.in{opacity:1;transform:none}
+.offers li.win{border-color:var(--mint);background:#EAF6F1}
+.av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700;font-size:14px}
+.offers b{display:block;font-size:15px;line-height:1.2}
+.offers small{color:var(--muted);font-size:13px}
+.price{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:19px;color:var(--teal);white-space:nowrap}
+.pick{margin-top:14px;min-height:46px;font-size:14px;color:var(--muted);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.pick strong{color:var(--mint)}
+.replay{white-space:nowrap;background:none;border:0;color:var(--teal);font:inherit;font-size:14px;font-weight:600;cursor:pointer;text-decoration:underline;padding:4px}
+
+/* sections */
+section{padding:92px 0}
+h2{font-size:clamp(32px,4.4vw,52px);font-weight:800;max-width:15em}
+.lead{color:var(--muted);font-size:19px;max-width:36em;margin:18px 0 0}
+
+/* steps: a real sequence */
+.steps{list-style:none;margin:56px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:s}
+.steps li{position:relative;padding:34px 22px 0 0;border-top:3px solid var(--navy)}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;top:-19px;left:0;width:35px;height:35px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:16px}
+.steps li:nth-child(2){border-color:var(--teal)}.steps li:nth-child(2)::before{background:var(--teal)}
+.steps li:nth-child(3){border-color:var(--mint)}.steps li:nth-child(3)::before{background:var(--mint)}
+.steps li:nth-child(4){border-color:var(--gold)}.steps li:nth-child(4)::before{background:var(--gold);color:var(--deep)}
+.steps h3{font-size:24px;margin:0 0 8px}
+.steps p{margin:0;color:var(--muted);font-size:16px}
+
+/* categories: solid tiles like the app */
+.cats{background:var(--deep);color:#fff}
+.cats h2{color:#fff}
+.cats .lead{color:#9FB4C9}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:48px}
+.tile{border-radius:22px;padding:22px 20px 22px;color:#fff;min-height:210px;display:flex;flex-direction:column;justify-content:space-between}
+.tile svg{width:44px;height:44px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tile h3{font-size:25px;margin:18px 0 6px}
+.tile p{margin:0;font-size:14.5px;line-height:1.45;opacity:.92}
+.tile.gold{color:var(--deep)}
+.tile:last-child{grid-column:span 2}
+
+/* reasons as ruled list */
+.why dl{margin:48px 0 0;display:grid;grid-template-columns:1fr 1fr;column-gap:64px}
+.why .row{display:grid;grid-template-columns:200px 1fr;gap:20px;padding:22px 0;border-top:1px solid var(--line)}
+.why dt{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:20px;line-height:1.2}
+.why dd{margin:0;color:var(--muted);font-size:16px}
+
+/* faq */
+.faq{background:#E7EFEC}
+.faq details{border-top:1px solid #C3D2CF;padding:0}
+.faq details:last-of-type{border-bottom:1px solid #C3D2CF}
+.faq summary{list-style:none;cursor:pointer;padding:22px 0;font-weight:700;font-size:19px;display:flex;justify-content:space-between;gap:16px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:28px;line-height:1;color:var(--teal);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin:0 0 22px;color:var(--muted);max-width:44em}
+.faqbox{max-width:780px;margin-top:40px}
+
+/* cta */
+.cta{background:var(--gold);color:var(--deep)}
+.cta .wrap{display:flex;flex-wrap:wrap;gap:28px;align-items:center;justify-content:space-between}
+.cta h2{max-width:11em}
+.cta p{margin:14px 0 0;font-size:18px;max-width:30em}
+.cta .pill{background:var(--deep);color:#fff;font-size:17px;padding:16px 28px}
+.cta .pill:hover{background:#0B2545}
+
+/* pros page */
+.calc{background:#fff;color:var(--ink);border-radius:26px;padding:26px;max-width:440px;margin-left:auto;width:100%;box-shadow:0 30px 60px -20px rgba(0,0,0,.55)}
+.calc label{font-size:14px;color:var(--muted);display:block;margin-bottom:8px}
+.calc .field{display:flex;align-items:center;border:2px solid var(--line);border-radius:16px;padding:0 16px;background:var(--paper)}
+.calc .field:focus-within{border-color:var(--teal)}
+.calc input{border:0;background:transparent;font:800 34px "Bricolage Grotesque",sans-serif;width:100%;padding:14px 0;color:var(--ink);outline:none;min-width:0}
+.calc .kz{font-weight:700;color:var(--muted)}
+.calc table{width:100%;border-collapse:collapse;margin-top:18px;font-size:16px}
+.calc td{padding:10px 0;border-bottom:1px solid var(--line)}
+.calc td:last-child{text-align:right;font-weight:700}
+.calc tr.net td{border-bottom:0;font-family:"Bricolage Grotesque",sans-serif;font-size:24px;color:var(--mint);padding-top:16px}
+.calc .fine{font-size:13px;color:var(--muted);margin:12px 0 0}
+.gains{list-style:none;margin:40px 0 0;padding:0;display:grid;gap:0}
+.gains li{padding:18px 0 18px 40px;border-top:1px solid var(--line);position:relative;font-size:18px}
+.gains li::before{content:"";position:absolute;left:4px;top:25px;width:16px;height:9px;border-left:3px solid var(--mint);border-bottom:3px solid var(--mint);transform:rotate(-45deg)}
+
+footer{background:var(--deep);color:#9FB4C9;padding:44px 0;font-size:14.5px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:20px 40px;justify-content:space-between}
+footer a{color:#DCE7F1}
+
+@media (max-width:900px){
+ .hero .wrap{grid-template-columns:1fr;gap:44px;padding-top:48px;padding-bottom:56px}
+ .demo,.calc{margin:0;max-width:none}
+ .steps{grid-template-columns:1fr 1fr;row-gap:44px}
+ .tiles{grid-template-columns:1fr 1fr}
+ .tile:last-child{grid-column:span 2}
+ .why dl{grid-template-columns:1fr}
+ section{padding:68px 0}
+ .top .hide{display:none}
+}
+@media (max-width:560px){
+ .wrap{padding:0 18px}
+ .steps{grid-template-columns:1fr}
+ .tiles{grid-template-columns:1fr}
+ .tile:last-child{grid-column:auto}
+ .tile{min-height:0}
+ .why .row{grid-template-columns:1fr;gap:6px}
+ .top .wrap{gap:14px}
+ .hero p.sub{font-size:17px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style></head><body>
+<nav class="top"><div class="wrap"><a class="brand" href="index.html"><img src="kasaka_logo.png" alt="">KASAKA</a>
+<a class="l hide" href="index.html#como-funciona">Como funciona</a>
+<a class="l hide" href="index.html#categorias">Categorias</a>
+<a class="l hide" href="index.html#perguntas">Perguntas</a>
+<a class="pill" href="profissionais.html">Sou profissional</a></div></nav>
+<header class="hero"><div class="wrap">
+<div>
+<h1>Diga o que precisa. Escolha quem o faz.</h1>
+<p class="sub">Descreva o serviço e os profissionais verificados da sua zona enviam o preço. Compare as ofertas, escolha uma e veja o profissional a chegar no mapa.</p>
+<div class="btns"><span class="pill dim">Em breve na Google Play</span><a class="pill out" href="profissionais.html">Quero ser profissional</a></div>
+<p class="note">A app está em preparação para lançamento em Angola.</p>
+</div>
+<div class="demo" aria-label="Exemplo de um pedido na KASAKA">
+<p class="cap">O seu pedido</p>
+<div class="req"><span id="typed"></span><i class="caret" id="caret"></i></div>
+<ul class="offers">
+<li><span class="av" style="background:#1C7293">CM</span><div><b>Carlos M.</b><small>★ 4,9 · a 1,2 km</small></div><span class="price">12.000 Kz</span></li>
+<li><span class="av" style="background:#3E9C82">AN</span><div><b>Ana N.</b><small>★ 4,8 · a 2,5 km</small></div><span class="price">10.500 Kz</span></li>
+<li><span class="av" style="background:#D9A62E;color:#071A31">JP</span><div><b>João P.</b><small>★ 4,7 · a 3,1 km</small></div><span class="price">13.000 Kz</span></li>
+</ul>
+<div class="pick"><div id="pick"></div><button class="replay" id="again" hidden>Ver outra vez</button></div>
+</div>
+</div></header>
+
+<section id="como-funciona"><div class="wrap">
+<h2>Do pedido à porta em quatro passos</h2>
+<p class="lead">Sem tabelas de preços fixos. Cada profissional diz quanto cobra e você decide.</p>
+<ol class="steps">
+<li><h3>Descreva</h3><p>Diga o que precisa, junte fotografias e, se quiser, indique um orçamento.</p></li>
+<li><h3>Receba ofertas</h3><p>Os profissionais disponíveis até 10 km são avisados e enviam o seu preço.</p></li>
+<li><h3>Escolha</h3><p>Compare preço, avaliações e distância. Tem 10 minutos para decidir.</p></li>
+<li><h3>Acompanhe</h3><p>Veja o profissional a caminho no mapa e fale com ele pela app.</p></li>
+</ol></div></section>
+
+<section class="cats" id="categorias"><div class="wrap">
+<h2>Do dia a dia às urgências</h2>
+<p class="lead">Sete categorias para começar. Vão crescer com os pedidos que receber.</p>
+<div class="tiles"><div class="tile " style="background:#1C7293"><svg viewBox="0 0 48 48"><path d="M30 8a10 10 0 0 0-9 13L8 34a4 4 0 0 0 6 6l13-13a10 10 0 0 0 13-9l-6 5-5-1-1-5z"/></svg><div><h3>Reparações</h3><p>Canalização, eletricidade, eletrodomésticos e pequenas obras.</p></div></div><div class="tile " style="background:#274A7A"><svg viewBox="0 0 48 48"><path d="M8 28l3-9a4 4 0 0 1 4-3h18a4 4 0 0 1 4 3l3 9v8H8z"/><path d="M8 28h32"/><circle cx="15" cy="32" r="1.5"/><circle cx="33" cy="32" r="1.5"/><path d="M11 36v4M37 36v4"/></svg><div><h3>Automóvel</h3><p>Mecânica, pintura, lavagem e assistência.</p></div></div><div class="tile " style="background:#3E9C82"><svg viewBox="0 0 48 48"><path d="M20 6l3 9 9 3-9 3-3 9-3-9-9-3 9-3z"/><path d="M36 28l1.5 4.5L42 34l-4.5 1.5L36 40l-1.5-4.5L30 34l4.5-1.5z"/></svg><div><h3>Limpeza</h3><p>Casas, escritórios e limpezas a fundo.</p></div></div><div class="tile gold" style="background:#D9A62E"><svg viewBox="0 0 48 48"><circle cx="12" cy="12" r="5"/><circle cx="12" cy="36" r="5"/><path d="M16 15l24 20M16 33L40 13"/></svg><div><h3>Beleza</h3><p>Cabeleireiros, maquilhagem e cuidados ao domicílio.</p></div></div><div class="tile " style="background:#E0654A"><svg viewBox="0 0 48 48"><path d="M8 40l4-12L32 8l8 8-20 20z"/><path d="M28 12l8 8"/></svg><div><h3>Digital</h3><p>Design, sites, fotografia e apoio informático.</p></div></div><div class="tile " style="background:#B4523F"><svg viewBox="0 0 48 48"><path d="M27 5L10 27h12l-2 16 18-23H26z"/></svg><div><h3>Urgente</h3><p>Quando não pode esperar: profissionais disponíveis agora.</p></div></div><div class="tile " style="background:#2E8B6A"><svg viewBox="0 0 48 48"><rect x="6" y="17" width="36" height="14" rx="7" transform="rotate(-40 24 24)"/><path d="M19 29l10-10" /></svg><div><h3>Farmácia</h3><p>Produtos de farmácia comprados numa farmácia licenciada e entregues em sua casa.</p></div></div></div></div></section>
+
+<section class="why"><div class="wrap">
+<h2>Feita para Angola, com confiança desde o primeiro pedido</h2>
+<dl>
+<div class="row"><dt>Profissionais verificados</dt><dd>Antes de receberem pedidos, validamos o BI ou passaporte e uma selfie tirada no momento.</dd></div>
+<div class="row"><dt>Preço combinado</dt><dd>Você vê várias ofertas e escolhe a que lhe convém.</dd></div>
+<div class="row"><dt>Avaliações nos dois sentidos</dt><dd>Clientes avaliam profissionais, e profissionais avaliam clientes.</dd></div>
+<div class="row"><dt>Mapa em tempo real</dt><dd>Saiba onde está o profissional e quanto falta para chegar.</dd></div>
+<div class="row"><dt>Conversa dentro da app</dt><dd>Combine os detalhes e ligue ao profissional sem sair da KASAKA.</dd></div>
+<div class="row"><dt>Os seus dados, sob controlo</dt><dd>Pode eliminar a conta e os dados quando quiser, na app ou <a href="eliminar-conta.html">nesta página</a>.</dd></div>
+</dl></div></section>
+
+<section class="faq" id="perguntas"><div class="wrap">
+<h2>Perguntas frequentes</h2>
+<div class="faqbox">
+<details><summary>A app é gratuita para os clientes?</summary><p>Sim. O cliente não paga para usar a app; paga o valor da oferta que aceitar.</p></details>
+<details><summary>Como se paga o serviço?</summary><p>Por agora, o pagamento é combinado diretamente com o profissional, em dinheiro. Os pagamentos digitais, como Multicaixa Express, serão acrescentados mais tarde.</p></details>
+<details><summary>E se nenhum profissional responder?</summary><p>O pedido fica aberto durante 10 minutos. Se ninguém enviar oferta, expira e pode voltar a pedir, ajustando o orçamento ou a descrição.</p></details>
+<details><summary>Como sei que o profissional é de confiança?</summary><p>Os profissionais são verificados com documento de identificação e selfie, e têm avaliações de outros clientes.</p></details>
+<details><summary>Posso pedir medicamentos?</summary><p>Pode pedir produtos de farmácia: o profissional compra numa farmácia licenciada e entrega-lhos. Medicamentos com receita só com receita válida.</p></details>
+<details><summary>Onde posso usar?</summary><p>A KASAKA está a ser preparada para Angola. Os profissionais são avisados num raio de 10 km do pedido.</p></details>
+<details><summary>Como elimino a minha conta?</summary><p>Na app, em Definições, ou na página <a href="eliminar-conta.html">Eliminar conta</a>.</p></details>
+</div></div></section>
+
+<section class="cta"><div class="wrap">
+<div><h2>Tem uma profissão? Receba pedidos perto de si.</h2><p>Sem mensalidade nem inscrição. A comissão é de 20% sobre cada serviço concluído.</p></div>
+<a class="pill" href="profissionais.html">Ver como funciona</a>
+</div></section>
+<footer><div class="wrap"><div><strong style="color:#fff">KASAKA</strong><br>KASAKA GROUP, SU, Lda. · Angola<br>Contacto: <a href="mailto:info@kasakaapp.net">info@kasakaapp.net</a></div>
+<div><a href="privacidade.html">Privacidade</a> &nbsp; <a href="termos.html">Termos</a> &nbsp; <a href="eliminar-conta.html">Eliminar conta</a></div></div></footer>
+<script>
+(function(){
+ var fmt=function(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,".")};
+ var text="Torneira da cozinha a pingar. Talatona, hoje à tarde.";
+ var typed=document.getElementById("typed"),caret=document.getElementById("caret");
+ var items=[].slice.call(document.querySelectorAll(".offers li"));
+ var pick=document.getElementById("pick"),again=document.getElementById("again");
+ var timers=[];
+ function later(fn,ms){timers.push(setTimeout(fn,ms))}
+ function clear(){timers.forEach(clearTimeout);timers=[]}
+ function final(){
+  typed.textContent=text;caret.style.display="none";
+  items.forEach(function(li,i){li.classList.add("in");li.classList.toggle("win",i===1)});
+  pick.innerHTML="<span><strong>Ana N. escolhida.</strong> Chega em cerca de 12 min.</span>";
+  again.hidden=false;
+ }
+ function play(){
+  clear();typed.textContent="";caret.style.display="";again.hidden=true;
+  items.forEach(function(li){li.classList.remove("in","win")});
+  pick.innerHTML="<span>A enviar o pedido…</span>";
+  var i=0;
+  (function type(){
+   if(i<=text.length){typed.textContent=text.slice(0,i);i++;later(type,28)}
+   else{
+    caret.style.display="none";
+    pick.innerHTML="<span>Profissionais perto de si estão a responder…</span>";
+    items.forEach(function(li,k){later(function(){li.classList.add("in")},700+k*900)});
+    later(function(){items[1].classList.add("win");pick.innerHTML="<span><strong>Ana N. escolhida.</strong> Chega em cerca de 12 min.</span>";again.hidden=false},700+items.length*900+1100);
+   }
+  })();
+ }
+ again.addEventListener("click",play);
+ if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){final()}else{play()}
+})();
+</script></body></html>
