@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-AO"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Para profissionais · KASAKA</title><meta name="description" content="Receba pedidos perto de si e proponha o seu preço na KASAKA.">
+<link rel="icon" href="kasaka_logo.png"><style>
+:root{--navy:#0B2545;--teal:#1C7293;--mint:#3E9C82;--gold:#D9A62E;--coral:#E0654A;
+--bg:#F6F7F5;--ink:#12181C;--muted:#5d6b78;--card:#fff;--line:#e3e7ea}
+@media (prefers-color-scheme:dark){:root{--bg:#0e1620;--ink:#e8edf2;--muted:#9fb0bf;--card:#16222e;--line:#263645}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--teal)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+nav.top{position:sticky;top:0;z-index:5;background:rgba(11,37,69,.96);backdrop-filter:blur(6px)}
+nav.top .wrap{display:flex;align-items:center;gap:18px;height:60px}
+nav.top img{height:34px}
+nav.top strong{color:#fff;letter-spacing:4px;font-size:17px;margin-right:auto}
+nav.top a{color:#c9d7e4;text-decoration:none;font-size:14px}
+nav.top a:hover{color:#fff}
+@media(max-width:640px){nav.top a.hide{display:none}}
+.hero{background:linear-gradient(160deg,#0B2545 0%,#12476a 60%,#1C7293 100%);color:#fff;padding:64px 0 80px}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+@media(max-width:820px){.hero .wrap{grid-template-columns:1fr}.phone{justify-self:center}}
+.hero h1{font-size:clamp(30px,5vw,46px);line-height:1.15;margin:0 0 16px}
+.hero h1 em{font-style:normal;color:#7fe0c3}
+.hero p{font-size:18px;color:#d3e1ee;max-width:520px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.btn{display:inline-block;padding:14px 22px;border-radius:14px;font-weight:700;text-decoration:none;font-size:15px}
+.btn.main{background:#3E9C82;color:#fff}
+.btn.ghost{border:1.6px solid #7fa3c0;color:#fff}
+.btn.off{background:#ffffff1f;color:#c9d7e4;cursor:default}
+.soon{font-size:13px;color:#9fb4c7;margin-top:12px}
+.phone{width:270px;background:#0a1a30;border-radius:34px;padding:12px;box-shadow:0 24px 60px #0007}
+.screen{background:#f3f5f7;border-radius:24px;padding:14px;color:#12181C;min-height:380px}
+.screen h4{margin:2px 0 10px;font-size:14px;color:#0B2545}
+.offer{background:#fff;border-radius:14px;padding:10px 12px;margin-bottom:9px;display:flex;align-items:center;gap:10px;box-shadow:0 1px 4px #0001}
+.av{width:34px;height:34px;border-radius:50%;flex:none;display:grid;place-items:center;color:#fff;font-weight:700;font-size:13px}
+.offer b{display:block;font-size:13px;white-space:nowrap}.offer small{color:#6B7680;font-size:11.5px;white-space:nowrap}
+.offer .pr{margin-left:auto;font-weight:700;color:#1C7293;font-size:13px;white-space:nowrap}
+.timer{text-align:center;font-size:11.5px;color:#6B7680;margin-top:8px}
+section{padding:64px 0}
+section h2{font-size:clamp(24px,3.4vw,32px);color:var(--navy);margin:0 0 8px}
+@media (prefers-color-scheme:dark){section h2{color:#fff}}
+.lead{color:var(--muted);max-width:620px;margin:0 0 30px}
+.grid{display:grid;gap:16px}
+.g4{grid-template-columns:repeat(4,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:860px){.g4{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.g4,.g3,.g2{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
+.card h3{margin:10px 0 4px;font-size:17px}.card p{margin:0;color:var(--muted);font-size:14.5px}
+.num{width:36px;height:36px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-weight:700}
+.dot{width:12px;height:12px;border-radius:50%;display:inline-block}
+.alt{background:var(--card);border-block:1px solid var(--line)}
+.pros{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+@media(max-width:760px){.pros{grid-template-columns:1fr}}
+ul.tick{list-style:none;padding:0;margin:14px 0}
+ul.tick li{padding-left:28px;position:relative;margin:9px 0}
+ul.tick li:before{content:"";position:absolute;left:0;top:6px;width:16px;height:16px;border-radius:50%;background:var(--mint)}
+ul.tick li:after{content:"";position:absolute;left:5px;top:10px;width:5px;height:8px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-2px)}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin:10px 0}
+summary{cursor:pointer;font-weight:600}
+details p{color:var(--muted);margin:10px 0 0}
+.cta{background:var(--navy);color:#fff;text-align:center;border-radius:24px;padding:44px 20px}
+.cta h2{color:#fff}.cta p{color:#c9d7e4;margin:0 auto 22px;max-width:520px}
+footer{padding:36px 0 48px;color:var(--muted);font-size:13.5px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between}
+footer a{color:var(--muted)}
+</style></head><body>
+<nav class="top"><div class="wrap"><img src="kasaka_logo.png" alt=""><strong>KASAKA</strong>
+<a class="hide" href="index.html#como-funciona">Como funciona</a>
+<a class="hide" href="index.html#categorias">Categorias</a>
+<a href="profissionais.html">Para profissionais</a>
+<a class="hide" href="index.html#perguntas">Perguntas</a></div></nav>
+<header class="hero"><div class="wrap" style="grid-template-columns:1fr"><div>
+<h1>Mais clientes, <em>ao seu preço.</em></h1>
+<p>Receba pedidos de clientes perto de si e envie a sua oferta. Você decide quanto cobra e quando está disponível.</p>
+<div class="btns"><span class="btn off">App em breve na Google Play</span></div></div></div></header>
+
+<section><div class="wrap"><div class="pros"><div><h2>O que ganha</h2>
+<ul class="tick"><li>Pedidos da sua categoria, até 10 km de si, só quando está disponível.</li>
+<li>Define o seu próprio preço em cada pedido, com o valor líquido calculado antes de enviar.</li>
+<li>Selo de profissional verificado, que dá confiança aos clientes.</li>
+<li>Avaliações que constroem a sua reputação.</li>
+<li>Sem mensalidade nem custo de inscrição.</li></ul></div>
+<div class="card"><h3>Comissão</h3><p style="font-size:34px;font-weight:700;color:var(--teal);margin:6px 0">20%</p>
+<p>Paga apenas sobre os serviços concluídos. Ao propor um preço, a app mostra quanto recebe depois da comissão.</p></div></div></div></section>
+
+<section class="alt"><div class="wrap"><h2>Como começar</h2><p class="lead">Quatro passos para receber o primeiro pedido.</p>
+<div class="grid g4">
+<div class="card"><div class="num">1</div><h3>Crie a conta</h3><p>Com o seu email ou número de telemóvel.</p></div>
+<div class="card"><div class="num">2</div><h3>Candidate-se</h3><p>Escolha a categoria e descreva a sua experiência.</p></div>
+<div class="card"><div class="num">3</div><h3>Verifique a identidade</h3><p>BI angolano ou passaporte e uma selfie tirada no momento.</p></div>
+<div class="card"><div class="num">4</div><h3>Receba pedidos</h3><p>Fique disponível e envie as suas ofertas.</p></div></div></div></section>
+
+<section><div class="wrap"><h2>Perguntas de profissionais</h2><p class="lead"></p>
+<details><summary>Que documentos preciso?</summary><p>BI angolano ou passaporte (para estrangeiros) e uma selfie tirada na altura. Os documentos ficam guardados de forma privada e só servem para a verificação.</p></details>
+<details><summary>Como recebo o pagamento?</summary><p>Por agora, em dinheiro, diretamente do cliente. A KASAKA regista os valores e acerta a comissão de 20% consigo.</p></details>
+<details><summary>Tenho de estar sempre disponível?</summary><p>Não. Só recebe pedidos quando se marca como disponível.</p></details>
+<details><summary>A app usa a minha localização?</summary><p>Sim, para saber que pedidos estão perto de si e para o cliente acompanhar a sua chegada. Durante um serviço aceite, o cliente vê a sua posição a caminho. Pode gerir a permissão no telemóvel.</p></details>
+</div></section>
+<footer><div class="wrap"><div>KASAKA GROUP, SU, Lda. · Angola<br>Contacto: <a href="mailto:info@kasakaapp.net">info@kasakaapp.net</a></div>
+<div><a href="privacidade.html">Privacidade</a> · <a href="termos.html">Termos</a> · <a href="eliminar-conta.html">Eliminar conta</a></div></div></footer></body></html>
