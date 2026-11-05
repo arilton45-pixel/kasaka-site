@@ -1,54 +1,499 @@
 <!doctype html>
-<html lang="pt-AO">
+<html lang="pt">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Início · KASAKA</title>
-<meta name="description" content="Serviços perto de si, com ofertas de preço">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KASAKA · O profissional certo, perto de si</title>
+<meta name="description" content="Descreva o que precisa, receba ofertas de profissionais perto de si, negoceie o preço e escolha. Serviços sob demanda em Angola.">
+<link rel="icon" href="img/k.png">
 <style>
-:root{--navy:#0B2545;--teal:#1C7293;--bg:#F6F7F5;--ink:#1d2733;--muted:#5d6b78;--card:#ffffff;--line:#e3e7ea}
-@media (prefers-color-scheme:dark){:root{--bg:#0e1620;--ink:#e8edf2;--muted:#9fb0bf;--card:#16222e;--line:#263645;--teal:#5fb3d1}}
+@font-face{font-family:Poppins;font-weight:400;font-display:swap;src:url(fonts/Poppins-Regular.ttf)}
+@font-face{font-family:Poppins;font-weight:500;font-display:swap;src:url(fonts/Poppins-Medium.ttf)}
+@font-face{font-family:Poppins;font-weight:600;font-display:swap;src:url(fonts/Poppins-SemiBold.ttf)}
+@font-face{font-family:Poppins;font-weight:700;font-display:swap;src:url(fonts/Poppins-Bold.ttf)}
+:root{--navy:#0b2545;--navy2:#12365f;--teal:#1c7293;--mint:#00d8a4;--mint-d:#0b8f6f;--blue:#0a6cff;--ink:#12181c;--muted:#5d6872;--bg:#f6f7f5;--line:#e3e7e5;--gold:#d9a62e;--coral:#d4553a;--r:20px}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-header{background:var(--navy);color:#fff;padding:28px 20px}
-header .in,main{max-width:760px;margin:0 auto}
-header strong{font-size:22px;letter-spacing:.5px}
-header p{margin:4px 0 0;color:#9FB4C7;font-size:14px}
-main{padding:24px 20px 56px}
-h1{font-size:26px;margin:8px 0 4px;color:var(--navy)}
-@media (prefers-color-scheme:dark){h1{color:#fff}}
-h2{font-size:19px;margin:32px 0 8px;color:var(--teal)}
-p,li{color:var(--ink)}
-.muted{color:var(--muted);font-size:14px}
-ul{padding-left:22px}
-li{margin:4px 0}
-.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:16px 0}
-table{width:100%;border-collapse:collapse;margin:12px 0;background:var(--card);border-radius:12px;overflow:hidden;font-size:15px}
-th,td{overflow-wrap:anywhere;text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
-th{background:rgba(28,114,147,.10);font-weight:600}
-a{color:var(--teal);overflow-wrap:anywhere}
-@media (max-width:520px){table{font-size:13.5px}th,td{padding:8px}}
-nav a{margin-right:14px;font-size:14px}
-footer{max-width:760px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font-size:13px}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;font-family:Poppins,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{line-height:1.15;margin:0;letter-spacing:-.02em}
+.wrap{width:min(1140px,100%);margin-inline:auto;padding-inline:clamp(16px,4vw,32px)}
+section{padding-block:clamp(56px,8vw,104px)}
+.eyebrow{display:inline-block;font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;color:var(--navy)}
+.lead{font-size:1.05rem;color:var(--muted);max-width:60ch;margin:14px 0 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 24px;border:0;border-radius:14px;font:600 .98rem Poppins,system-ui,sans-serif;text-decoration:none;cursor:pointer;transition:transform .15s,box-shadow .15s,background .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn:focus-visible,button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid var(--mint);outline-offset:2px}
+.btn-main{background:linear-gradient(95deg,var(--blue),var(--mint));color:#04213d;box-shadow:0 10px 26px rgba(0,120,200,.3)}
+.btn-ghost{background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.35)}
+.btn-line{background:#fff;color:var(--navy);border:1.5px solid var(--line)}
+/* navegação */
+.nav{position:sticky;top:0;z-index:20;background:rgba(11,37,69,.92);backdrop-filter:blur(10px);color:#fff}
+.nav .wrap{display:flex;align-items:center;gap:20px;min-height:68px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.2em;text-decoration:none;font-size:1.02rem}
+.brand img{height:34px;width:auto}
+.nav nav{margin-left:auto;display:flex;gap:24px;font-size:.9rem}
+.nav nav a{text-decoration:none;opacity:.85}
+.nav nav a:hover{opacity:1;color:var(--mint)}
+.nav .btn{min-height:42px;padding:0 18px;font-size:.88rem}
+@media(max-width:860px){.nav nav{display:none}.nav .btn{margin-left:auto}}
+@media(max-width:420px){.brand{letter-spacing:.08em;font-size:.92rem}.nav .wrap{gap:10px}.nav .btn{padding:0 12px;font-size:.8rem}}
+/* topo */
+.hero{position:relative;background:radial-gradient(900px 500px at 85% 10%,rgba(0,216,164,.2),transparent 65%),radial-gradient(700px 500px at 0% 100%,rgba(10,108,255,.28),transparent 60%),var(--navy);color:#fff;overflow:hidden;padding-block:clamp(44px,6vw,80px)}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(28px,5vw,64px);align-items:center}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
+.hero h1{font-size:clamp(2.4rem,6vw,4.2rem);font-weight:700}
+.rot{display:inline-block;background:linear-gradient(90deg,#69b4ff,var(--mint));-webkit-background-clip:text;background-clip:text;color:transparent;transition:opacity .35s,transform .35s}
+.rot.out{opacity:0;transform:translateY(10px)}
+.hero p{font-size:1.1rem;color:#c4d3e2;max-width:52ch;margin:18px 0 26px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.note{font-size:.82rem;color:#a9bdd1;margin-top:14px}
+.pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px;font-size:.84rem}
+.pill-row span{padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14)}
+/* telemóvel */
+.phone{width:min(340px,100%);margin-inline:auto;background:#06172c;border-radius:38px;padding:11px;box-shadow:0 30px 70px rgba(0,0,0,.45),inset 0 0 0 1px rgba(255,255,255,.12)}
+.screen{background:#f6f7f5;color:var(--ink);border-radius:28px;min-height:520px;padding:18px 16px;display:flex;flex-direction:column;overflow:hidden}
+.screen-top{display:flex;align-items:center;gap:8px;font-weight:700;letter-spacing:.14em;font-size:.82rem;color:var(--navy)}
+.screen-top img{height:22px;width:auto}
+.demo-tag{margin-left:auto;font-size:.62rem;letter-spacing:.04em;font-weight:600;color:var(--teal);background:#e3f1f6;padding:3px 8px;border-radius:99px}
+.progress{height:4px;background:#e2e7e6;border-radius:9px;margin:12px 0 16px;overflow:hidden}
+.progress i{display:block;height:100%;width:25%;background:linear-gradient(90deg,var(--blue),var(--mint));transition:width .4s}
+.stage{flex:1;display:flex;flex-direction:column;animation:fade .35s}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.stage h3{font-size:1.1rem;color:var(--navy);margin-bottom:4px}
+.stage p{font-size:.8rem;color:var(--muted);margin:0 0 12px}
+.choices{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.choice{display:flex;flex-direction:column;align-items:center;gap:7px;padding:16px 6px;background:#fff;border:1.5px solid transparent;border-radius:15px;font:600 .8rem Poppins,system-ui,sans-serif;color:var(--ink);cursor:pointer;transition:.15s}
+.choice:hover{border-color:var(--teal);transform:translateY(-2px)}
+.choice svg{width:27px;height:27px;color:var(--teal)}
+.radar{position:relative;width:128px;height:128px;margin:22px auto}
+.radar i{position:absolute;inset:0;border-radius:50%;border:2px solid var(--mint);animation:ping 1.8s infinite;opacity:0}
+.radar i:nth-child(2){animation-delay:.6s}.radar i:nth-child(3){animation-delay:1.2s}
+.radar b{position:absolute;inset:44px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--mint))}
+@keyframes ping{0%{transform:scale(.3);opacity:.9}100%{transform:scale(1);opacity:0}}
+.offer{display:flex;align-items:center;gap:10px;background:#fff;border-radius:15px;padding:11px;margin-bottom:9px;animation:fade .4s both}
+.av{flex:none;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700;font-size:.82rem}
+.offer div{flex:1;min-width:0;font-size:.74rem;color:var(--muted);line-height:1.35}
+.offer strong{display:block;color:var(--ink);font-size:.82rem}
+.price{font-weight:700;color:var(--navy);font-size:.88rem;white-space:nowrap}
+.small-btn{border:0;background:var(--teal);color:#fff;font:600 .72rem Poppins,system-ui,sans-serif;border-radius:9px;min-height:32px;padding:0 10px;cursor:pointer}
+.big{width:100%;margin-top:auto}
+.range{width:100%;accent-color:var(--teal);height:30px}
+.big-price{font-size:2rem;font-weight:700;color:var(--navy);text-align:center;margin:12px 0 2px}
+.code{display:flex;justify-content:center;gap:7px;margin:16px 0}
+.code span{width:45px;height:56px;display:grid;place-items:center;background:#fff;border-radius:12px;font-size:1.5rem;font-weight:700;color:var(--navy);box-shadow:0 3px 10px rgba(11,37,69,.09)}
+.okline{display:flex;gap:8px;align-items:flex-start;background:#e3f6ef;color:#0b6a52;border-radius:12px;padding:10px;font-size:.78rem;font-weight:500;margin-bottom:10px}
+.map{height:112px;border-radius:15px;margin-bottom:10px;position:relative;overflow:hidden;background:linear-gradient(135deg,#dfeaf0,#eaf2ea)}
+.map:before,.map:after{content:"";position:absolute;background:#fff}
+.map:before{left:0;right:0;top:48%;height:9px;transform:rotate(-8deg)}
+.map:after{top:0;bottom:0;left:60%;width:9px;transform:rotate(12deg)}
+.dot{position:absolute;z-index:2;width:15px;height:15px;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.25)}
+.dot.me{background:var(--blue);left:76%;top:62%}
+.dot.pro{background:var(--mint-d);left:12%;top:42%;animation:drive 6s ease-in-out infinite alternate}
+@keyframes drive{to{left:62%;top:52%}}
+/* categorias e imagens */
+.photos{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:36px}
+@media(max-width:640px){.photos{grid-template-columns:1fr}}
+.photo{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:1/1;max-height:440px;width:100%;background:var(--navy)}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .5s}
+.photo:hover img{transform:scale(1.05)}
+.photo figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 20px 18px;color:#fff;background:linear-gradient(transparent,rgba(6,23,44,.88))}
+.photo strong{display:block;font-size:1.25rem}
+.photo span{font-size:.88rem;color:#dbe6f0}
+figure{margin:0}
+.photo-light{aspect-ratio:auto;max-height:none;display:flex;flex-direction:column;background:var(--navy)}
+.photo-light img{flex:1;min-height:0;height:auto;object-fit:contain;background:#f1f6f5;padding:10px}
+.photo-light figcaption{position:static;padding:16px 20px 18px;background:var(--navy)}
+.photo-light:hover img{transform:none}
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(138px,1fr));gap:12px;margin-top:20px}
+.cat{background:#fff;border-radius:18px;padding:20px 12px;text-align:center;font-weight:600;font-size:.9rem;transition:.2s}
+.cat:hover{transform:translateY(-4px);box-shadow:0 12px 24px rgba(11,37,69,.1)}
+.cat svg{width:32px;height:32px;margin:0 auto 8px;display:block;color:var(--teal)}
+/* como funciona */
+.tabs{display:inline-flex;gap:4px;background:#fff;padding:5px;border-radius:15px;margin-top:24px;max-width:100%}
+.tab{border:0;background:transparent;min-height:44px;padding:0 20px;border-radius:11px;font:600 .92rem Poppins,system-ui,sans-serif;color:var(--muted);cursor:pointer}
+.tab[aria-selected=true]{background:var(--navy);color:#fff}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:26px;padding:0;list-style:none;counter-reset:s}
+@media(max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}
+.steps li{background:#fff;border-radius:var(--r);padding:22px;counter-increment:s;animation:fade .35s both}
+.steps li:before{content:counter(s);display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--blue),var(--mint));color:#04213d;font-weight:700;margin-bottom:12px}
+.steps h3{font-size:1.03rem;color:var(--navy);margin-bottom:6px}
+.steps p{font-size:.88rem;color:var(--muted);margin:0}
+/* segurança */
+.dark{background:var(--navy);color:#fff}
+.dark h2{color:#fff}.dark .lead{color:#c4d3e2}.dark .eyebrow{color:var(--mint)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:34px}
+.card{padding:24px;border-radius:var(--r);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);transition:.2s}
+.card:hover{background:rgba(255,255,255,.1);transform:translateY(-3px)}
+.card svg{width:30px;height:30px;color:var(--mint);margin-bottom:12px}
+.card h3{font-size:1.05rem;margin-bottom:6px}
+.card p{font-size:.88rem;color:#c4d3e2;margin:0}
+/* profissionais */
+.pro-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,60px);align-items:center}
+@media(max-width:820px){.pro-grid{grid-template-columns:1fr}}
+.ticks{list-style:none;padding:0;margin:20px 0 26px}
+.ticks li{position:relative;padding-left:30px;margin-bottom:10px;font-size:.96rem}
+.ticks li:before{content:"";position:absolute;left:3px;top:7px;width:13px;height:7px;border-left:3px solid var(--mint-d);border-bottom:3px solid var(--mint-d);transform:rotate(-45deg)}
+.calc{background:#fff;border-radius:24px;padding:clamp(20px,4vw,32px);box-shadow:0 18px 44px rgba(11,37,69,.09)}
+.calc h3{color:var(--navy);font-size:1.2rem}
+.calc label{display:block;font-size:.88rem;color:var(--muted);margin-top:16px}
+.calc output{display:block;font-size:2.1rem;font-weight:700;color:var(--navy);margin-top:4px}
+.rows{margin-top:14px;border-top:1px solid var(--line)}
+.rows div{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:.92rem}
+.rows .net{font-weight:700;color:var(--mint-d);font-size:1.05rem}
+.fine{font-size:.76rem;color:var(--muted);margin:12px 0 0}
+/* perguntas */
+.faq{margin-top:28px;display:grid;gap:10px;max-width:820px}
+details{background:#fff;border-radius:16px;padding:0 20px}
+summary{cursor:pointer;font-weight:600;padding:17px 22px 17px 0;list-style:none;position:relative}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";position:absolute;right:0;top:12px;font-size:1.4rem;color:var(--teal);transition:transform .2s}
+details[open] summary:after{transform:rotate(45deg)}
+details p{margin:0 0 18px;color:var(--muted);font-size:.93rem}
+/* final */
+.cta{background:linear-gradient(115deg,var(--navy),#0d4c78 60%,#0b8f6f);color:#fff;text-align:center}
+.cta h2{color:#fff}.cta p{color:#d5e3ee;margin:14px auto 26px;max-width:56ch}
+.cta .hero-actions{justify-content:center}
+footer{background:#06172c;color:#a9bdd1;font-size:.88rem;padding-block:36px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between}
+footer nav{display:flex;flex-wrap:wrap;gap:8px 20px}
+footer a:hover{color:var(--mint)}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s,transform .6s}
+.reveal.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.radar i{opacity:.5}}
 </style>
 </head>
 <body>
-<header><div class="in"><strong>KASAKA</strong><p>Serviços perto de si, com ofertas de preço</p></div></header>
-<main>
-<nav><a href="index.html">Início</a><a href="privacidade.html">Privacidade</a><a href="termos.html">Termos de utilização</a><a href="eliminar-conta.html">Eliminar conta</a></nav>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-tool" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.2L3 17.8V21h3.2l6.3-6.3a4 4 0 0 0 5.2-5.4l-2.6 2.6-2.5-.6-.6-2.5z"/></symbol>
+    <symbol id="i-car" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11l1.6-4.5A2 2 0 0 1 8.5 5h7a2 2 0 0 1 1.9 1.5L19 11M4 11h16a1 1 0 0 1 1 1v5H3v-5a1 1 0 0 1 1-1zM6 17v2M18 17v2M7 14h.01M17 14h.01"/></symbol>
+    <symbol id="i-clean" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v7M8 21l.6-7a3.4 3.4 0 0 1 6.8 0l.6 7zM10 21v-3M14 21v-3"/></symbol>
+    <symbol id="i-cut" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4L8.1 15.9M14.5 14.5L20 20M8.1 8.1L12 12"/></symbol>
+    <symbol id="i-pal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+    <symbol id="i-med" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M12 8v8M8 12h8"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></symbol>
+    <symbol id="i-id" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6 16c.6-1.4 1.7-2 3-2s2.4.6 3 2M15 10h3M15 14h3"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3M12 15v2"/></symbol>
+    <symbol id="i-sos" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.6-3.2 7.8-8 9-4.800-1.200-8-4.400-8-9V6zM12 8v4M12 15h.01"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4M5 4h12l-2 4 2 4H5"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.600 10.700l6.800-4M8.600 13.300l6.800 4"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.800 5.800 6.200.9-4.500 4.400 1.100 6.300L12 17.400l-5.600 3 1.100-6.300L3 9.700l6.200-.9z"/></symbol>
+  </defs>
+</svg>
 
-<h1>KASAKA</h1>
-<p>Serviços perto de si. Descreva o que precisa, receba ofertas de profissionais verificados e escolha a melhor.</p>
-<div class="box">
-<ul style="list-style:none;padding:0;margin:0">
-<li><a href="privacidade.html">Política de Privacidade</a></li>
-<li><a href="termos.html">Termos de Utilização</a></li>
-<li><a href="eliminar-conta.html">Eliminar a conta e os dados</a></li>
-</ul>
-</div>
-<p class="muted">Contacto: <a href="mailto:info@kasakaapp.net">info@kasakaapp.net</a></p>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#topo"><img src="img/k.png" alt="" width="240" height="260">KASAKA</a>
+    <nav aria-label="Principal">
+      <a href="#servicos">Serviços</a>
+      <a href="#como">Como funciona</a>
+      <a href="#seguranca">Segurança</a>
+      <a href="#profissionais">Profissionais</a>
+      <a href="#perguntas">Perguntas</a>
+    </nav>
+    <a class="btn btn-main" href="#experimente">Experimentar</a>
+  </div>
+</header>
 
+<main id="topo">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Precisa de alguém?<br><span class="rot" id="rot">Encontre</span> na KASAKA.</h1>
+      <p>Descreva o que precisa. Os profissionais perto de si enviam o preço deles, você negoceia e escolhe a melhor oferta.</p>
+      <div class="hero-actions">
+        <a class="btn btn-main" href="#experimente">Ver como funciona</a>
+        <a class="btn btn-ghost" href="#profissionais">Sou profissional</a>
+      </div>
+      <p class="note">Em breve na Google Play.</p>
+      <div class="pill-row" aria-label="Destaques">
+        <span>Sem preço fixo</span><span>Identidade verificada</span><span>Até 10 km de si</span>
+      </div>
+    </div>
+
+    <div id="experimente">
+      <div class="phone">
+        <div class="screen">
+          <div class="screen-top"><img src="img/k.png" alt="" width="240" height="260">KASAKA<span class="demo-tag">Demonstração</span></div>
+          <div class="progress" aria-hidden="true"><i id="bar"></i></div>
+          <div id="stage" class="stage" aria-live="polite"></div>
+        </div>
+      </div>
+      <p class="note" style="text-align:center">Toque para experimentar. Os profissionais e os preços são apenas exemplos.</p>
+    </div>
+  </div>
+</section>
+
+<section id="servicos">
+  <div class="wrap">
+    <span class="eyebrow reveal">Serviços</span>
+    <h2 class="reveal">Para cuidar de si, da casa e do dia a dia.</h2>
+    <div class="photos">
+      <figure class="photo reveal">
+        <img src="img/beleza.jpg" alt="Mulher sorridente com o cabelo penteado, sobre um fundo rosa" loading="lazy" width="370" height="350">
+        <figcaption><strong>Beleza e bem-estar</strong><span>O talento certo está mais perto.</span></figcaption>
+      </figure>
+      <figure class="photo photo-light reveal">
+        <img src="img/profissionais.png" alt="Ilustração de quatro profissionais: pintor, canalizador, eletricista e limpeza" loading="lazy" width="560" height="366">
+        <figcaption><strong>Serviços do dia a dia</strong><span>Pintor, canalizador, eletricista e muito mais.</span></figcaption>
+      </figure>
+    </div>
+    <div class="cats reveal">
+      <div class="cat"><svg><use href="#i-tool"/></svg>Reparações</div>
+      <div class="cat"><svg><use href="#i-car"/></svg>Automóvel</div>
+      <div class="cat"><svg><use href="#i-clean"/></svg>Limpeza</div>
+      <div class="cat"><svg><use href="#i-cut"/></svg>Beleza</div>
+      <div class="cat"><svg><use href="#i-pal"/></svg>Digital</div>
+      <div class="cat"><svg><use href="#i-med"/></svg>Farmácia</div>
+      <div class="cat"><svg><use href="#i-bolt"/></svg>Urgente</div>
+    </div>
+  </div>
+</section>
+
+<section id="como" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow reveal">Como funciona</span>
+    <h2 class="reveal">Simples para os dois lados.</h2>
+    <div class="tabs reveal" role="tablist" aria-label="Escolha o seu perfil">
+      <button class="tab" role="tab" aria-selected="true" data-who="cliente">Sou cliente</button>
+      <button class="tab" role="tab" aria-selected="false" data-who="pro">Sou profissional</button>
+    </div>
+    <ol class="steps" id="steps"></ol>
+  </div>
+</section>
+
+<section id="seguranca" class="dark">
+  <div class="wrap">
+    <span class="eyebrow reveal">Segurança</span>
+    <h2 class="reveal">Quem entra em sua casa não pode ser um desconhecido.</h2>
+    <p class="lead reveal">Por isso a KASAKA tem proteções antes, durante e depois do serviço.</p>
+    <div class="cards">
+      <div class="card reveal"><svg><use href="#i-id"/></svg><h3>Identidade verificada</h3><p>Os profissionais enviam o BI ou passaporte e uma selfie, e a KASAKA aprova antes de poderem trabalhar.</p></div>
+      <div class="card reveal"><svg><use href="#i-key"/></svg><h3>Código de chegada</h3><p>Só você vê o código de 4 algarismos. O profissional precisa dele para iniciar o serviço.</p></div>
+      <div class="card reveal"><svg><use href="#i-share"/></svg><h3>Partilha com a família</h3><p>Envie por WhatsApp o serviço e o nome do profissional. A sua localização não é enviada.</p></div>
+      <div class="card reveal"><svg><use href="#i-sos"/></svg><h3>Ajuda à mão</h3><p>Durante o serviço, chega à linha de emergência 111 com um toque.</p></div>
+      <div class="card reveal"><svg><use href="#i-flag"/></svg><h3>Denunciar e bloquear</h3><p>Comunique um problema à KASAKA e deixe de se cruzar com essa pessoa em pedidos novos.</p></div>
+      <div class="card reveal"><svg><use href="#i-star"/></svg><h3>Avaliações</h3><p>No fim, o cliente avalia o profissional e o profissional avalia o cliente.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="profissionais">
+  <div class="wrap pro-grid">
+    <div>
+      <span class="eyebrow reveal">Para profissionais</span>
+      <h2 class="reveal">Os clientes perto de si, ao seu preço.</h2>
+      <p class="lead reveal">Sem loja nem currículo: o seu trabalho fala por si.</p>
+      <ul class="ticks reveal">
+        <li>Recebe pedidos da sua área, até 10 km</li>
+        <li>Define o preço de cada oferta e negoceia com o cliente</li>
+        <li>Mostra fotos dos seus trabalhos no perfil</li>
+        <li>Ganha avaliações que o ajudam a conquistar clientes</li>
+      </ul>
+      <a class="btn btn-main reveal" href="mailto:info@kasakaapp.net?subject=Quero%20ser%20profissional%20na%20KASAKA">Quero ser profissional</a>
+    </div>
+    <div class="calc reveal">
+      <h3>Quanto fica para si?</h3>
+      <label for="price">Preço que combinou com o cliente</label>
+      <output id="priceOut" for="price">15.000 Kz</output>
+      <input class="range" id="price" type="range" min="500" max="200000" step="500" value="15000">
+      <div class="rows">
+        <div><span>Comissão da KASAKA (20%)</span><span id="fee">3.000 Kz</span></div>
+        <div class="net"><span>Fica para si</span><span id="net">12.000 Kz</span></div>
+      </div>
+      <p class="fine">Não há preço fixo: é só um exemplo de cálculo. Nos pagamentos em dinheiro, a comissão é acertada depois com a KASAKA.</p>
+    </div>
+  </div>
+</section>
+
+<section id="perguntas" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow reveal">Perguntas</span>
+    <h2 class="reveal">O que costumam perguntar.</h2>
+    <div class="faq reveal">
+      <details><summary>Quanto custa usar a KASAKA?</summary><p>Para o cliente, pedir é gratuito: paga só o preço da oferta que escolher. A comissão de 20% é paga pelo profissional à KASAKA.</p></details>
+      <details><summary>Como é definido o preço?</summary><p>Cada profissional propõe o seu preço. Pode escolher a oferta tal como está, ou propor outro valor até 3 vezes em cada oferta. O profissional aceita, recusa ou responde com outro preço.</p></details>
+      <details><summary>Como pago?</summary><p>Por Multicaixa Express, por PayPay ou em dinheiro, diretamente ao profissional.</p></details>
+      <details><summary>Quanto tempo tenho para escolher?</summary><p>Um pedido fica aberto a ofertas durante 15 minutos. Se agendar para outro dia, fica aberto até 24 horas, terminando sempre antes da hora marcada.</p></details>
+      <details><summary>Como vejo o profissional a chegar?</summary><p>Depois de escolher uma oferta, abre um mapa com a posição do profissional, atualizada enquanto ele tem o painel da app aberto.</p></details>
+      <details><summary>Posso apagar a minha conta?</summary><p>Sim, em Definições na app. <a href="apagar-conta.html">Veja como e o que acontece aos seus dados</a>.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2 class="reveal">Em breve no seu telemóvel.</h2>
+    <p class="reveal">Tem dúvidas, ou quer ser dos primeiros a usar a KASAKA? Escreva-nos.</p>
+    <div class="hero-actions reveal">
+      <a class="btn btn-main" href="mailto:info@kasakaapp.net?subject=Quero%20saber%20mais%20sobre%20a%20KASAKA">Falar com a KASAKA</a>
+    </div>
+    <p class="note reveal" style="margin-top:14px">info@kasakaapp.net</p>
+  </div>
+</section>
 </main>
-<footer>KASAKA GROUP, SU, Lda. · Angola · Contacto: <a href="mailto:info@kasakaapp.net">info@kasakaapp.net</a></footer>
+
+<footer>
+  <div class="wrap">
+    <span>© KASAKA GROUP, SU, Lda.</span>
+    <nav aria-label="Documentos">
+      <a href="privacidade.html">Privacidade</a>
+      <a href="termos.html">Termos</a>
+      <a href="apagar-conta.html">Apagar conta</a>
+      <a href="mailto:info@kasakaapp.net">info@kasakaapp.net</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function kz(v) { return String(Math.round(v)).replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' Kz'; }
+
+  // Palavra que muda no título
+  var rot = document.getElementById('rot');
+  var words = ['Encontre', 'Conecte', 'Resolva'];
+  var w = 0;
+  if (!reduce) {
+    setInterval(function () {
+      rot.classList.add('out');
+      setTimeout(function () {
+        w = (w + 1) % words.length;
+        rot.textContent = words[w];
+        rot.classList.remove('out');
+      }, 350);
+    }, 2600);
+  }
+
+  // Aparecer ao descer a página
+  var els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    els.forEach(function (el) { io.observe(el); });
+  } else {
+    els.forEach(function (el) { el.classList.add('on'); });
+  }
+
+  // Como funciona
+  var data = {
+    cliente: [
+      ['Diga o que precisa', 'Escolha a categoria, descreva o serviço e indique um ponto de referência. Pode juntar fotografias.'],
+      ['Receba ofertas', 'Os profissionais perto de si enviam o preço, com a avaliação e a distância.'],
+      ['Negoceie e escolha', 'Proponha outro valor, se quiser, e escolha a oferta que lhe dá mais confiança.'],
+      ['Acompanhe e avalie', 'Veja o profissional no mapa, dê-lhe o código à chegada e avalie no fim.']
+    ],
+    pro: [
+      ['Candidate-se', 'Envie os seus dados, o BI ou passaporte e uma selfie. A KASAKA verifica a sua identidade.'],
+      ['Receba pedidos', 'Ative a disponibilidade e receba pedidos da sua área e categoria.'],
+      ['Envie o seu preço', 'Faça a sua oferta e responda às propostas dos clientes.'],
+      ['Faça o serviço', 'Peça o código ao chegar, conclua o serviço e confirme o pagamento.']
+    ]
+  };
+  var steps = document.getElementById('steps');
+  var tabs = document.querySelectorAll('.tab');
+  function showSteps(who) {
+    steps.innerHTML = data[who].map(function (s, i) {
+      return '<li style="animation-delay:' + i * 70 + 'ms"><h3>' + s[0] + '</h3><p>' + s[1] + '</p></li>';
+    }).join('');
+    tabs.forEach(function (t) { t.setAttribute('aria-selected', String(t.dataset.who === who)); });
+  }
+  tabs.forEach(function (t) { t.addEventListener('click', function () { showSteps(t.dataset.who); }); });
+  showSteps('cliente');
+
+  // Calculadora
+  var price = document.getElementById('price');
+  function calc() {
+    var v = +price.value;
+    var fee = Math.round(v * 0.2);
+    document.getElementById('priceOut').textContent = kz(v);
+    document.getElementById('fee').textContent = kz(fee);
+    document.getElementById('net').textContent = kz(v - fee);
+  }
+  price.addEventListener('input', calc);
+  calc();
+
+  // Demonstração no telemóvel
+  var stage = document.getElementById('stage');
+  var bar = document.getElementById('bar');
+  var timer = null;
+  var state = {};
+  var services = [
+    ['Limpeza', 'i-clean', 18000], ['Reparações', 'i-tool', 15000],
+    ['Beleza', 'i-cut', 12000], ['Automóvel', 'i-car', 25000]
+  ];
+  function show(html, pct) {
+    clearTimeout(timer);
+    stage.classList.remove('stage');
+    void stage.offsetWidth;
+    stage.classList.add('stage');
+    stage.innerHTML = html;
+    bar.style.width = pct + '%';
+  }
+  function step1() {
+    show('<h3>De que precisa?</h3><p>Escolha um serviço.</p><div class="choices">' +
+      services.map(function (s, i) {
+        return '<button class="choice" data-i="' + i + '"><svg><use href="#' + s[1] + '"/></svg>' + s[0] + '</button>';
+      }).join('') + '</div>', 25);
+    stage.querySelectorAll('.choice').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var s = services[+b.dataset.i];
+        state = { name: s[0], base: s[2] };
+        step2();
+      });
+    });
+  }
+  function step2() {
+    show('<h3>' + state.name + '</h3><p>A avisar os profissionais perto de si…</p><div class="radar"><i></i><i></i><i></i><b></b></div>', 50);
+    timer = setTimeout(step3, reduce ? 300 : 2000);
+  }
+  function step3() {
+    var offers = [
+      ['A', 'Profissional A', '4,8 · a 1,2 km', state.base, '#0a6cff'],
+      ['B', 'Profissional B', '4,6 · a 3,4 km', Math.round(state.base * 1.2 / 500) * 500, '#0b8f6f']
+    ];
+    state.offers = offers;
+    show('<h3>Ofertas recebidas</h3><p>Exemplos. Toque numa para negociar.</p>' +
+      offers.map(function (o, i) {
+        return '<div class="offer" style="animation-delay:' + i * 160 + 'ms"><span class="av" style="background:' + o[4] + '">' + o[0] + '</span><div><strong>' + o[1] + '</strong>' + o[2] + '<br><span class="price">' + kz(o[3]) + '</span></div><button class="small-btn" data-i="' + i + '">Negociar</button></div>';
+      }).join(''), 62);
+    stage.querySelectorAll('.small-btn').forEach(function (b) {
+      b.addEventListener('click', function () { state.offer = state.offers[+b.dataset.i]; step4(); });
+    });
+  }
+  function step4() {
+    var o = state.offer;
+    var min = Math.max(500, Math.round(o[3] * 0.6 / 500) * 500);
+    var max = Math.round(o[3] * 1.2 / 500) * 500;
+    var start = Math.round(o[3] * 0.85 / 500) * 500;
+    show('<h3>Negociar o preço</h3><p>' + o[1] + ' pediu ' + kz(o[3]) + '. Quanto propõe?</p>' +
+      '<div class="big-price" id="prop">' + kz(start) + '</div>' +
+      '<input class="range" id="propR" type="range" aria-label="A sua proposta" min="' + min + '" max="' + max + '" step="500" value="' + start + '">' +
+      '<button class="btn btn-main big" id="send">Enviar proposta</button>', 75);
+    var r = document.getElementById('propR');
+    r.addEventListener('input', function () { document.getElementById('prop').textContent = kz(+r.value); });
+    document.getElementById('send').addEventListener('click', function () {
+      state.final = +r.value;
+      step5();
+    });
+  }
+  function step5() {
+    show('<h3>Serviço confirmado</h3><div class="okline">' + state.offer[1] + ' aceitou ' + kz(state.final) + '.</div>' +
+      '<div class="map" aria-hidden="true"><span class="dot me"></span><span class="dot pro"></span></div>' +
+      '<p style="margin-bottom:0;text-align:center">Dê este código só quando ele chegar:</p>' +
+      '<div class="code" aria-label="Código de exemplo"><span>4</span><span>2</span><span>7</span><span>1</span></div>' +
+      '<button class="btn btn-line big" id="again">Recomeçar</button>', 100);
+    document.getElementById('again').addEventListener('click', step1);
+  }
+  step1();
+})();
+</script>
 </body>
 </html>
